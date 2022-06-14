@@ -1,0 +1,20 @@
+package com.generation.controllers;
+
+import org.springframework.stereotype.Controller;//controller importado
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;//importar restcontroller
+
+//Restcontroller despliega la pagina web
+@RestController //importar controller, ruta controlador
+public class IndexController {
+
+	
+//en los parentesis se establece la anotacion para capturar las rutas,1°ruta
+	@RequestMapping("/") //vendria siendo localhost (http://localhost:8080/
+	public String index() {
+		return "Hola mundo g1"; //para desaparecer error en index
+	}	
+		
+	
+	

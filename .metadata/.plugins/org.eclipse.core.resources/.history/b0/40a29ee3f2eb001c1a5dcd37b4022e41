@@ -1,0 +1,32 @@
+package com.generation.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("/registro")//ruta por default
+public class RegistroControllers {
+
+	@RequestMapping("")//ruta para desplegar jsp
+	public String registro() {
+		return "registro.jsp";//pag a desplegar
+	}
+	
+	//generar ruta /registro/usuario
+	//CAPTURAR DATOS DE USUARIO
+	@PosMapping("/usuario")//ruta          <Establece nombre>
+	public String registroUsuario(@RequestParam(value="gato") String nombre,
+			@RequestParam(value="apellido") String apellido,
+			@RequestParam(value="edad") String edad) {
+		
+		//se debe concatenar 
+		System.out.println("parametro gato" + nombre);//verificar mapeo entre jsp y consola
+		System.out.println("parametro gato" + apellido);//capturar dato y visualizar en consola
+		System.out.println("parametro gato" + edad);// mensaje que se visualizara en consola
+		
+		
+		return "registro.jsp";//pag a desplegar
+	}
+	
+}

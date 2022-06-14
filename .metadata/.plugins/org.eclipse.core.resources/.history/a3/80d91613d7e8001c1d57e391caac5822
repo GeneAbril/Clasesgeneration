@@ -1,0 +1,17 @@
+package com.generation.controllers;
+
+import org.springframework.stereotype.Controller;//controller importado
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller //importar controller, ruta controlador
+public class IndexController {
+
+	
+//en los parentesis se establece la anotacion para capturar las rutas,1°ruta
+	@RequestMapping("/") //vendria siendo localhost (http://localhost:8080/
+	public String index() {
+		return ""; //para desaparecer error en index
+		
+	}
+	
+}

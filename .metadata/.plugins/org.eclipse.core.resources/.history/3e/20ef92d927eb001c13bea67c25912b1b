@@ -1,0 +1,11 @@
+package com.generation.api;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ParametrosRestController {
+@RequestMapping("/api")
+public String fecha(@RequestParam(value="fecha")String fecha) {
+	return "la fecha es: " + fecha;
+}
+}

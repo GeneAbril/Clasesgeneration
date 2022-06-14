@@ -1,0 +1,11 @@
+package com.generation.api;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+//localhost:8080/var
+@RequestMapping("/var")// ("/m") se utiliza cuando el usuario se conecta desde el movil
+public class PathVariablesRestController {
+
+}

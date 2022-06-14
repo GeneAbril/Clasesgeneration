@@ -1,0 +1,57 @@
+package com.generation.models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity //objeto se convierte en entidad
+@Table(name="usuarios") //se establece nombre en base de datos
+
+
+//OBJETO USUARIO
+
+public class Usuario {
+	@Id //ESTABLECER PRIMARY KEY
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //
+	private Long id;//ESTE ATRIBUTO ESTABLECE COLUMNA ID
+
+	//ATRIBUTOS
+private String nombre;
+private String apellido;
+private Integer edad;
+
+//CONSTRUCTOR VACIO
+public Usuario() {
+	super();
+}
+//CONSTRUCTOR CON PARAMETRO
+public Usuario(String nombre, String apellido, Integer edad) {
+	super();
+	this.nombre = nombre;
+	this.apellido = apellido;
+	this.edad = edad;
+}
+
+//GETTERS AND SETTERS
+public String getNombre() {
+	return nombre;
+}
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+public String getApellido() {
+	return apellido;
+}
+public void setApellido(String apellido) {
+	this.apellido = apellido;
+}
+public Integer getEdad() {
+	return edad;
+}
+public void setEdad(Integer edad) {
+	this.edad = edad;
+}
+
+}

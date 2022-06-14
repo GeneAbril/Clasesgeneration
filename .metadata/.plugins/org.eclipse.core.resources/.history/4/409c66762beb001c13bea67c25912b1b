@@ -1,0 +1,24 @@
+package com.generation.api;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ParametrosRestController {
+	//localhost:8080/api?fecha=20220613
+@RequestMapping("/api")
+public String fecha(@RequestParam(value="fecha")String fecha) {
+	return "la fecha es: " + fecha;
+}
+//localhost:8080/api/seccion?modulo=3&seccion=5
+/*deben estar los 2 parametros*/
+@RequestMapping("/api/seccion")
+public String seccion(@RequestParam(value="modulo") String modulo, 
+	@RequestParam(value="seccion")String seccion){
+	return "el modulo es: " + modulo+ "la seccion es: " + seccion;
+}
+	
+
+}
+

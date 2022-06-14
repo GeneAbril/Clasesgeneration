@@ -1,0 +1,3 @@
+#server.port=9080
+#ACCEDER A LOS JSP
+spring.mvc.view.prefix=/WEB-INF/

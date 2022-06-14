@@ -1,0 +1,13 @@
+#server.port=9080
+#ACCEDER A LOS JSP
+spring.mvc.view.prefix=/WEB-INF/
+spring.jpa.show-sql= true
+
+#configuracion base datos, indicar usuario y clave de basededato
+spring.datasource.url=jdbc:mysql://localhost:3306/sistemag1
+spring.datasource.username=genesis
+spring.datasource.password=Admin1234
+
+#crear o actualizar tablas
+spring.jpa.hibernate.ddl-auto=none
+
