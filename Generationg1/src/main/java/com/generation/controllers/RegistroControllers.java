@@ -1,7 +1,10 @@
 package com.generation.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,11 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.generation.models.Usuario;
+import com.generation.services.UsuarioService;
+
+
 
 @Controller
 @RequestMapping("/registro")//ruta por default
 public class RegistroControllers {
-
+	
+//inyeccion de dependencias, traer al controlador una clase
+	@Autowired
+	UsuarioService usuarioService;
+	
 	@RequestMapping("")//ruta para desplegar jsp
 	
 	//pasar un objeto vacio al jsp --model ->nombreattribute-> objeto ->nombreobjeto 
@@ -52,9 +62,16 @@ public class RegistroControllers {
 			return "registro.jsp";
 		}
 		
+		
 System.out.println(usuario.getNombre() + " "+ usuario.getApellido() + " "+ usuario.getEdad());
 	
-		return "index.jsp";//enviar a index para enviar a ese jsp
+//enviar objeto al servicio
+usuarioService.saveUsuario(usuario);
+
+List <Usuario> listaUsuarios =usuarioService.findAll();
+model.addAttribute("usuariosCapturados",listaUsuarios);
+
+		return "usuarios.jsp";//enviar a index para enviar a ese jsp
 	}
 	
 }
