@@ -15,7 +15,7 @@
                 <h1 style="text-align: center">Los datos se han ingresado exitosamente!
                 </h1>
                 <div class="container">
-                    <table class="table table-dark table-striped">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>

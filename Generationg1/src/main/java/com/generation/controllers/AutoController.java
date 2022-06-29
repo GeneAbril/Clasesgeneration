@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.generation.models.Auto;
 import com.generation.services.AutoService;
 
@@ -37,7 +38,7 @@ public class AutoController {
 			model.addAttribute("msgError","Datos erroneos");
 			return "mostrarAutos.jsp";
 		}else {
-			//enviamos el obeto a persistir en base datos
+			//enviamos el obJeto a persistir en base datos
 			autoService.guardarAuto(auto);
 			//obtener un alista de autos
 			List<Auto> listaAutos = autoService.findAll();
@@ -80,7 +81,7 @@ public String editar(@PathVariable("id")Long id, Model model){
 			return "editarauto.jsp";
 		}else {
 			auto.setId(id);
-			//enviamos el obeto a persistir en base datos
+			//enviamos el objeto a persistir en base datos
 			autoService.guardarAuto(auto);
 			//obtener un alista de autos
 			List<Auto> listaAutos = autoService.findAll();

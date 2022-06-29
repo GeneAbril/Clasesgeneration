@@ -52,7 +52,7 @@ public class RegistroControllers {
 		return "registro.jsp";//pag a desplegar
 	}
 	
-	/*CAPTURAR OBJETOS CON ATRIBUTOS LLEOS*/
+	/*CAPTURAR OBJETOS CON ATRIBUTOS LLENOS*/
 	@PostMapping("/usuario")
 	public String guardarUsuario(@Valid @ModelAttribute("usuario") Usuario usuario, 
 			BindingResult resultado, Model model) {//BINDINGRESULT: se verifica si se cumple con condicion size
